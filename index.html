@@ -61,8 +61,8 @@
         const response = await fetch(API_URL);
         const data = await response.json();
 
-        document.getElementById('temperature').textContent = ${data.temperature} °C;
-        document.getElementById('humidity').textContent = ${data.humidity} %;
+        document.getElementById('temperature | °C').textContent = data.temperature;
+        document.getElementById('humidity | %').textContent = data.humidity;
         document.getElementById('light').textContent = data.light;
         document.getElementById('moisture').textContent = data.moisture;
       } catch (error) {
