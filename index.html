@@ -54,17 +54,17 @@
   </table>
 
   <script>
-    const API_URL = "http://192.168.1.209/";
+    const API_URL = "http://192.168.0.44/";
 
     async function fetchSensorData() {
       try {
         const response = await fetch(API_URL);
         const data = await response.json();
 
-        document.getElementById('temperature | °C').textContent = data.temperature;
-        document.getElementById('humidity | %').textContent = data.humidity;
+        document.getElementById('temperature').textContent = data.temperature;
+        document.getElementById('humidity').textContent = data.humidity;
         document.getElementById('light').textContent = data.light;
-        document.getElementById('moisture').textContent = data.moisture;
+        document.getElementById('moisture').textContent = data.soil_moisture;
       } catch (error) {
         console.error("Error fetching data:", error);
       }
